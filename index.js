@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require('cors');
 //Antes de todas las rutas
-
+// Indicarle a express que vamos a recibir un JSON
 app.use(cors());
 app.use(express.json());
 

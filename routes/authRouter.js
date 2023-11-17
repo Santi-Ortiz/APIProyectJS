@@ -12,9 +12,13 @@ router.post("/login", passport.authenticate('basic', {session: false}) ,async(re
     const user =  req.user;
     delete user.password;
     const token = jwt.sign(user, config.JWT_SECRET);
-    res.cookie('jwt', token, {httpOnly: true}).status(200).json({
-        message :  "Cookie enviada"
-    });
+    // res.cookie('jwt', token, {httpOnly: true}).status(200).json({
+    //     message :  "Cookie enviada"
+    // });
+    res.status(200).json({
+        message: "Login exitoso",
+        token
+    })
 
 });
 

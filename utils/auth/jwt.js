@@ -11,7 +11,7 @@ passport.use(
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
         },
         async(payload, done) => {
-            const userFound = await mongo.getOne("user", {email: payload.email});
+            const userFound = await mongo.getOne("users", {email: payload.email});
 
             if(!userFound){
                 error = "Alguna informacion esta incorrecta"
